@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 
 public class ApplicationConfig {
     @Value("hello")
-    private String greetings;
+    private String greeting;
 
     @Bean
     public TimeService timeService() {
@@ -25,6 +25,6 @@ public class ApplicationConfig {
 
     @Bean
     public GreetingService greetingService() {
-
+        return new GreetingService(greeting);
     }
 }
