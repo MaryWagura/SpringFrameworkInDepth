@@ -20,6 +20,11 @@ public class ApplicationConfig {
     public OutputService outputService(
             GreetingService greetingService,
             TimeService timeService) {
+        return new OutputService(greetingService, timeService);
+    }
+
+    @Bean
+    public GreetingService greetingService() {
 
     }
 }
