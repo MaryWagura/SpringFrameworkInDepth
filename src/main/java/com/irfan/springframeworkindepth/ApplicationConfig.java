@@ -10,7 +10,7 @@ import org.springframework.context.annotation.PropertySource;
 @PropertySource("classpath:application.properties")
 public class ApplicationConfig {
     @Value("${app.greeting}")
-    private String greetings;
+    private String greeting;
 
     @Value("${app.name}")
     private String name;
@@ -29,6 +29,6 @@ public class ApplicationConfig {
 
     @Bean
     public GreetingService greetingService() {
-        return new GreetingService(greetings);
+        return new GreetingService(greeting);
     }
 }
