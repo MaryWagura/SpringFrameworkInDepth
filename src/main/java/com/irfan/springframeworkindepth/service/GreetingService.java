@@ -1,6 +1,7 @@
 package com.irfan.springframeworkindepth.service;
 
 import com.irfan.springframeworkindepth.aspect.Loggable;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +11,8 @@ public class GreetingService {
     @Value("${app.greeting}")
     private String greeting;
 
-    public GreetingService(){
+    @Autowired
+    public GreetingService(String greeting){
         super();
     }
 
