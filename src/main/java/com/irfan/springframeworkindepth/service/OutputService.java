@@ -12,6 +12,7 @@ public class OutputService {
 
     private final GreetingService greetingService;
     private final TimeService timeService;
+    private final String name;
 
     @Autowired
     public OutputService(GreetingService greetingService, TimeService timeService){
