@@ -7,15 +7,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class OutputService {
 
-    @Value("${app.name}")
-    private String name;
-
     private final GreetingService greetingService;
     private final TimeService timeService;
     private final String name;
 
     @Autowired
-    public OutputService(GreetingService greetingService, TimeService timeService){
+    public OutputService(GreetingService greetingService, TimeService timeService, String name){
         this.greetingService = greetingService;
         this.timeService = timeService;
         this.name = name;
