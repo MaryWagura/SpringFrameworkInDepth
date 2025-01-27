@@ -5,10 +5,11 @@ import com.irfan.springframeworkindepth.service.OutputService;
 import com.irfan.springframeworkindepth.service.TimeService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.PropertySource;
 
-
+@PropertySource("classpath:application.properties")
 public class ApplicationConfig {
-    @Value("hello")
+    @Value("${app.greeting}")
     private String greeting;
 
     @Bean
