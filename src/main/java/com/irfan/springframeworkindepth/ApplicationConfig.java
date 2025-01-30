@@ -15,6 +15,10 @@ public class ApplicationConfig {
     @Value("${app.name}")
     private String name;
 
+    //go look for the profile
+    @Value("#{new Boolean(environment['spring.profiles.active']!='dev')}")
+    private boolean is24;
+
     @Bean
     public TimeService timeService() {
         return new TimeService(true);
