@@ -21,7 +21,7 @@ public class ApplicationConfig {
 
     @Bean
     public TimeService timeService() {
-        return new TimeService(true);
+        return new TimeService(is24);
     }
 
     @Bean
