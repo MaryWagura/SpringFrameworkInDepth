@@ -24,6 +24,12 @@ public class TimeService {
         super();
     }
 
+    @Bean
+    @Profile("dev")
+    public TimeService devTimeService(){
+        return new TimeService(false);
+    }
+
 
     public String getCurrentTime(){
         LocalDateTime now = LocalDateTime.now();
