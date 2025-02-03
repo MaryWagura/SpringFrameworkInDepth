@@ -12,7 +12,7 @@ public class GreetingService {
     private String greeting;
 
     @Autowired
-    public GreetingService(String greeting){
+    public GreetingService(){
         super();
     }
 
