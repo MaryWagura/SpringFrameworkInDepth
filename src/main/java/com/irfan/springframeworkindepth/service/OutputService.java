@@ -9,13 +9,13 @@ public class OutputService {
 
     private final GreetingService greetingService;
     private final TimeService timeService;
-    private final String name;
+    @Value("${app.name}")
+    private  String name;
 
     @Autowired
-    public OutputService(GreetingService greetingService, TimeService timeService, String name){
+    public OutputService(GreetingService greetingService, TimeService timeService){
         this.greetingService = greetingService;
         this.timeService = timeService;
-        this.name = name;
     }
 
     public void generateOutput(){
