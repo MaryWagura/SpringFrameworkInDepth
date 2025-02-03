@@ -1,5 +1,6 @@
 package com.irfan.springframeworkindepth.service;
 
+import java.sql.Time;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -18,18 +19,10 @@ public class TimeService {
     @Value("#{new Boolean(environment['spring.profiles.active']!='dev')}")
     private boolean is24;
 
-    @Bean
-    @Profile("!dev")
-    public TimeService(){
+    public TimeService() {
         super();
-    }
 
-    @Bean
-    @Profile("dev")
-    public TimeService devTimeService(){
-        return new TimeService(false);
     }
-
 
     public String getCurrentTime(){
         LocalDateTime now = LocalDateTime.now();
